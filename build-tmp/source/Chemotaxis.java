@@ -19,42 +19,65 @@ Bacteria [] colony = new Bacteria[100];
 
 int initX;
 int initY;
-int i =0;
-
-
+int i = 0;
+int colorV;
+Apple fruit;
+int growth = 0;
  //declare bacteria variables here   
  public void setup()   
  {     
  	//initialize bacteria variables here  
+
  	size(400, 400);
  	initX = (int)(Math.random()*400);
  	initY = (int)(Math.random()*400);
+ 	
  		for ( int i = 0; i < colony.length; i ++) {
-
-  		colony[i] = new Bacteria(initX ,initY,50);
-  		
+		colorV = (int)(Math.random()*256);
+  		colony[i] = new Bacteria(initX ,initY, colorV);
   		
 
   		}
-
+	
 
  }
  public void draw()   
  {    
  	background(101);
  	//move and show the bacteria 
+	fruit = new Apple(mouseX, mouseY, 25);
+	fruit.show();
+	//find a way to make the ellipse grow
+		if (get(mouseX, mouseY) == color(255, 0 ,0)) {
+
+ 			growth += 0.1f;
+ 		}
 
  	for ( int i = 0; i < colony.length; i ++) {
  		colony[i].move();
 		colony[i].show();	
  		
-
   	}
-
+  	
 
 
  }   
- 
+ class Apple 
+ {
+ 	int aX, aY, aR;
+ 	Apple(int x, int y, int r) {
+ 		aX = x;
+ 		aY = y;
+ 		aR = r ;
+ 	}
+ 	public void show() {
+ 		if (growth < 10) {
+ 		fill(255, 0, 0);
+ 		ellipse( aX, aY, aR + growth, aR + growth);
+ 	}
+ 	}
+
+ }
 
 
   
