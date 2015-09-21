@@ -56,7 +56,7 @@ int growth = 0;
  		aR = r ;
  	}
  	void show() {
- 		if (growth < 10) {
+ 		if (growth < 20) {
  		fill(255, 0, 0);
  		ellipse( aX, aY, aR + growth, aR + growth);
  	}
