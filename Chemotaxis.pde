@@ -13,13 +13,14 @@ int growth = 0;
  	//initialize bacteria variables here  
 
  	size(400, 400);
- 	initX = (int)(Math.random()*400);
- 	initY = (int)(Math.random()*400);
+ 	frameRate(20);
+ 	
  	
  		for ( int i = 0; i < colony.length; i ++) {
-		colorV = (int)(Math.random()*256);
-  		colony[i] = new Bacteria(initX ,initY, colorV);
-  		
+ 			initX = (int)(Math.random()*400);
+	 		initY = (int)(Math.random()*400);
+			colorV = (int)(Math.random()*256);
+	  		colony[i] = new Bacteria(initX ,initY, colorV);
 
   		}
 	
