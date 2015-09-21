@@ -33,7 +33,7 @@ int growth = 0;
 	fruit = new Apple(mouseX, mouseY, 25);
 	fruit.show();
 	//find a way to make the ellipse grow
-		if (get(mouseX, mouseY) == color(255, 0 ,0)) {
+		if (get(mouseX, mouseY) != color(255, 0 ,0)) {
 
  			growth += 0.1;
  		}
