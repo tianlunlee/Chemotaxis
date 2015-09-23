@@ -33,10 +33,7 @@ int growth = 0;
 	fruit = new Apple(mouseX, mouseY, 25);
 	fruit.show();
 	//find a way to make the ellipse grow
-		if (get(mouseX, mouseY) != color(255, 0 ,0)) {
-
- 			growth += 0.1;
- 		}
+		
 
  	for ( int i = 0; i < colony.length; i ++) {
  		colony[i].move();
@@ -87,6 +84,10 @@ int growth = 0;
 
  	void move(){
  		// x component
+ 		if (get(bactX, bactY) == color(255, 0 ,0)) {
+
+ 			growth += 0.1;
+ 		}
  		if (mouseX < bactX) 
  		{
  			bactX += (int)(Math.random()*3) -1.5;
