@@ -54,9 +54,9 @@ int growth = 0;
  	}
  	void show() {
  		if (mousePressed == true) {
- 			growth = 0;
+ 			growth = 20;
  		}
- 		if (growth < 20) {
+ 		if (growth > -20) {
  		fill(255, 0, 0);
  		ellipse( aX, aY, aR + growth, aR + growth);
  	}
@@ -84,7 +84,7 @@ int growth = 0;
 
  	void move(){
  		// x component
- 
+
  		if (mouseX < bactX) 
  		{
  			bactX += (int)(Math.random()*3) -1.5;
@@ -116,7 +116,7 @@ int growth = 0;
  		}
 		if (get(bactX, bactY) == color(255, 0 ,0)) {
 
- 			growth += 0.1;
+ 			growth += -0.1;
  		}
 
  	}
