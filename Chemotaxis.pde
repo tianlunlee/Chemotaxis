@@ -84,10 +84,7 @@ int growth = 0;
 
  	void move(){
  		// x component
- 		if (get(bactX, bactY) == color(255, 0 ,0)) {
-
- 			growth += 0.1;
- 		}
+ 
  		if (mouseX < bactX) 
  		{
  			bactX += (int)(Math.random()*3) -1.5;
@@ -117,7 +114,10 @@ int growth = 0;
  		{
  			bactY += (int)(Math.random()*3) -1;
  		}
+		if (get(bactX, bactY) == color(255, 0 ,0)) {
 
+ 			growth += 0.1;
+ 		}
 
  	}
  }    
