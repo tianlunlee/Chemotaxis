@@ -6,7 +6,7 @@ int initY;
 int i = 0;
 int colorV;
 Apple fruit;
-int growth = 0;
+int growth = 40;
  //declare bacteria variables here   
  void setup()   
  {     
@@ -30,7 +30,7 @@ int growth = 0;
  {    
  	background(101);
  	//move and show the bacteria 
-	fruit = new Apple(mouseX, mouseY, 25);
+	fruit = new Apple(mouseX, mouseY, growth);
 	fruit.show();
 	//find a way to make the ellipse grow
 		
@@ -54,11 +54,11 @@ int growth = 0;
  	}
  	void show() {
  		if (mousePressed == true) {
- 			growth = 20;
+ 			growth = 40;
  		}
- 		if (growth > -20) {
+ 		if (growth >= 0) {
  		fill(255, 0, 0);
- 		ellipse( aX, aY, aR + growth, aR + growth);
+ 		ellipse( aX, aY, growth, growth);
  	}
  	}
 
@@ -84,7 +84,7 @@ int growth = 0;
 
  	void move(){
  		// x component
-
+ 		if (growth > 0) {
  		if (mouseX < bactX) 
  		{
  			bactX += (int)(Math.random()*3) -1.5;
@@ -117,6 +117,11 @@ int growth = 0;
 		if (get(bactX, bactY) == color(255, 0 ,0)) {
 
  			growth += -0.1;
+ 		}
+ 	}
+ 		else if (growth <= 0) {
+ 			bactX += (int)(Math.random()*3)-1;
+ 			bactY += (int)(Math.random()*3)-1;
  		}
 
  	}
